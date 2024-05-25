@@ -1,0 +1,2 @@
+insert into angajati(id) values (1);
+insert into angajati(id) values (2);

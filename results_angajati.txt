@@ -1,0 +1,7 @@
+insert into angajati(id) values (1);
+insert into angajati(id) values (2);
+insert into angajati(id) values (3);
+insert into angajati(id) values (4);
+insert into angajati(id) values (5);
+insert into angajati(id) values (6);
+insert into angajati(id) values (7);

@@ -1,0 +1,2 @@
+update angajati set number = 1;
+update angajati set number = 2;
