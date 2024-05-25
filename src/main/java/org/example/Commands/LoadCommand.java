@@ -13,7 +13,12 @@ public class LoadCommand extends Command {
     private String filePath;
     private String tableName;
     private String statementType;
-
+    /**
+     * Constructor pentru comanda de încărcare.
+     *
+     * @param args Un array de string-uri care conține calea către fișier, numele tabelului și tipul declarației SQL.
+     * @throws IllegalArgumentException Dacă numărul de argumente este diferit de 3.
+     */
     public LoadCommand(String[] args) {
         super(args);
         if (args.length != 3) {

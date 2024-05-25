@@ -83,7 +83,15 @@ public class UpdateColumns implements Statemants{
         }
         return mapColumns;
     }
-
+    /**
+     * Writes SQL update statements to a file based on the specified columns to update and the data
+     *
+     * @param columnsToUpdate The list of column names to be updated
+     * @return The name of the file where the SQL update statements are written
+     * @throws SQLException         If a database access error occurs
+     * @throws FileWriteException   If an error occurs while writing to the file
+     * @throws FileReadExceptions  If an error occurs while reading from the file
+     */
     public String writeStatement(List<String> columnsToUpdate) throws SQLException, FileWriteException, FileReadExceptions {
         String nameFile = "results_" + tableName + ".txt";
         Map<Object, Object> columns =  this.getColumnDetailsFromDatabase();

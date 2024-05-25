@@ -22,6 +22,10 @@ import java.util.StringTokenizer;
 
 public class ExecuteCommand extends Command {
     private String username;
+    /**
+     * Comanda pentru a executa o comandă specifică din istoricul auditului.
+     * Această comandă necesită un identificator de comandă și un nume de utilizator pentru a verifica permisiunile de administrator.
+     */
     public ExecuteCommand(String[] args) {
         super(args);
 
@@ -67,7 +71,13 @@ public class ExecuteCommand extends Command {
         users.add("ADMIN");
         return users;
     }
-
+    /**
+     * Verifică dacă un utilizator este un administrator.
+     * Această metodă interoghează baza de date pentru a determina dacă utilizatorul specificat este un administrator.
+     *
+     * @param username Numele utilizatorului pentru care să se verifice statutul de administrator.
+     * @return {@code true} dacă utilizatorul este un administrator, {@code false} în caz contrar.
+     */
     private boolean isAdmin(String username) {
         Boolean isAdmin = false;
         String sql = "SELECT type FROM users where username = '" + username + "' ;";
@@ -88,7 +98,12 @@ public class ExecuteCommand extends Command {
         }
         return isAdmin;
     }
-
+    /**
+     * Execută comanda specificată și înregistrează aceasta în jurnalul de comenzi dacă este necesar.
+     *
+     * @param command Comanda de executat.
+     * @throws DatabaseConnectionException Excepție aruncată în cazul unei erori de conexiune la baza de date.
+     */
 
     private void executeCommand(String command) throws DatabaseConnectionException {
         Application.CommandFormat commandFormat = getInputCommand(command);
@@ -115,6 +130,14 @@ public class ExecuteCommand extends Command {
             System.out.println("Error executing command: " + e.getMessage());
         }
     }
+    /**
+     * Creează un obiect de tip {@code CommandFormat} bazat pe o comandă dată.
+     * Această metodă parsează comanda dată și extrage numele comenzii și argumentele asociate.
+     *
+     * @param commandString String-ul care reprezintă comanda.
+     * @return Un obiect {@code CommandFormat} care conține numele comenzii și argumentele asociate.
+     * @throws ArgsTooLongException Excepție aruncată dacă comanda sau unul dintre argumente este prea lung.
+     */
     public Application.CommandFormat getInputCommand(String commandString) {
         try {
             StringTokenizer stringTokenizer = new StringTokenizer(commandString, " ");

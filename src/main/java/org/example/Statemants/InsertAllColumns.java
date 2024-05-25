@@ -72,7 +72,14 @@ public class InsertAllColumns implements Statemants{
         }
         return list;
     }
-
+    /**
+     * Writes SQL insert statements to a file based on the data read from a CSV or JSON file.
+     *
+     * @return The name of the created file.
+     * @throws SQLException        If an SQL error occurs while retrieving column details.
+     * @throws FileWriteException  If an error occurs while writing to the file.
+     * @throws FileReadExceptions If an error occurs while reading the CSV or JSON file.
+     */
     public String writeStatement() throws SQLException, FileWriteException, FileReadExceptions {
         String nameFile = "results_" + tableName + ".txt";
         Map<Object, Object> columns =  this.getColumnDetailsFromDatabase();

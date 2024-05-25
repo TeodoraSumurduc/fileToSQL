@@ -13,7 +13,14 @@ public class GenerateUpdates implements Generate{
         this.listColumns = listColumns;
         this.listUpdate = new ArrayList<String>();
     }
-
+    /**
+     * Generates SQL UPDATE statements based on the provided data and column details.
+     *
+     * @param list      A map representing the data to be included in the UPDATE statements.
+     * @param tableName The name of the table for which the UPDATE statements are generated.
+     * @param data      A list of lists containing the data to be included in the UPDATE statements.
+     * @return A list of strings representing the generated SQL UPDATE statements.
+     */
     public List<String> generateStatements(Map<Object,Object> list, String tableName, List<List<String>> data){
         Map<Integer,String> indexs = new HashMap<Integer,String>();
         String update = "update " + tableName+" set ";
@@ -36,6 +43,12 @@ public class GenerateUpdates implements Generate{
         }
         return  listUpdate;
     }
+    /**
+     * Converts a string to its SQL representation.
+     *
+     * @param text The text to be converted.
+     * @return The SQL representation of the input text.
+     */
     public String StringInSQL(String text){
         List<String> textSplit = List.of(text.split(""));
         List<String> errors = List.of(":", "&", ".", ",", "'","^","$","%","*");

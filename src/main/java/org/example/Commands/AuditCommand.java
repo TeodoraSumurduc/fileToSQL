@@ -11,6 +11,11 @@ import java.util.Objects;
 
 public class AuditCommand extends Command {
 
+    /**
+     * Constructs a new AuditCommand with the specified arguments.
+     *
+     * @param args the command arguments
+     */
     public AuditCommand(String[] args) {
         super(args);
     }
@@ -35,7 +40,13 @@ public class AuditCommand extends Command {
         users.add("ADMIN");
         return users;
     }
-
+    /**
+     * Executes an audit for a given username.
+     * This method retrieves the command history for the specified user and prints it to the console.
+     * Access to this method is restricted to administrators.
+     *
+     * @param currentUsername The username for which to execute the audit.
+     */
     public void executeAudit(String currentUsername) {
         if (!isAdmin(currentUsername)) {
             System.out.println("Access denied. Only administrators can execute this command.");
@@ -50,6 +61,16 @@ public class AuditCommand extends Command {
             }
         }
     }
+    /**
+     * Retrieves the command history for a specific user.
+     * This method queries the database for the command history of the given user,
+     * retrieves the commands and their timestamps, and returns them as a list of strings.
+     *
+     * @param username  The username for which to retrieve the command history.
+     * @param page      The page number of the command history (pagination).
+     * @param pageSize  The size of each page in the command history (pagination).
+     * @return A list of strings representing the command history for the specified user.
+     */
     public List<String> getCommandHistory(String username, int page, int pageSize) {
         List<String> commands = new ArrayList<>();
 
@@ -70,6 +91,13 @@ public class AuditCommand extends Command {
         }
         return commands;
     }
+    /**
+     * Verifică dacă un utilizator este un administrator.
+     * Această metodă interoghează baza de date pentru a determina dacă utilizatorul specificat este un administrator.
+     *
+     * @param username Numele utilizatorului pentru care să se verifice statutul de administrator.
+     * @return {@code true} dacă utilizatorul este un administrator, {@code false} în caz contrar.
+     */
     private boolean isAdmin(String username) {
         Boolean isAdmin = false;
         String sql = "SELECT type FROM users where username = '" + username + "' ;";
