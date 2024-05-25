@@ -1,7 +1,7 @@
 **File to SQL Application**
 
 **Overview**
-File to SQL is a Java-based application designed to facilitate the conversion of data from various file formats into SQL statemants. It provides a command-line interface for users to interact with the system, allowing for efficient conversion and management of data.
+File to SQL is a Java-based application designed to facilitate the conversion of data from various file formats into SQL statemants(Insers or Update specific Columns). It provides a command-line interface for users to interact with the system, allowing for efficient conversion and management of data.
 
 **Features**
 Convert data from files to SQL statemants
@@ -25,18 +25,21 @@ File to SQL supports a single type of user:
 **Commands**
 
 For all users:
+
     + Help: Display all available commands and their descriptions.
     + Quit: Exit the application.
     + Register: Register a new user and be authenticated as him.
     + Login: Login to your account.
 
 For Admin and Regular users:
+
     + Logout: Logout from your account.
     + Load: Load a CSV/JSON file and generate SQL statements.
     + Audit: Display command history for a user.
     + Execute: Execute a specific SQL command from history.
 
 For Admin users:
+
     + Promote: Make user an admin.
     + Create table: Add a table in the data base.
     + Insert column: Add a new line in the table with the column name and her type.
