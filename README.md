@@ -35,7 +35,7 @@ For Admin and Regular users:
 
     + Logout: Logout from your account.
     + Load: Load a CSV/JSON file and generate SQL statements.
-    + Audit: Display command history for a user.
+    + Audit: Display the last 5 commands history for a user.
     + Execute: Execute a specific SQL command from history.
 
 For Admin users:
@@ -45,6 +45,7 @@ For Admin users:
     + Insert column: Add a new line in the table with the column name and her type.
 
 **Usage**
+
 Launch the application by executing the main Java class.
 Use the command-line interface to enter commands and interact with the application.
 Follow the prompts and instructions to perform file conversion and SQL operations.
