@@ -54,4 +54,8 @@ Ensure that the file paths are correctly specified for import and export operati
 Review the application logs for detailed information about the conversion process and any errors encountered.
 Make sure to backup important data before performing any SQL operations to avoid data loss.
 
+**Results**
+
+This application returns a txt file that contains all the update or insert statements of the input file. We have the possibility to bind INSERT or UPDATE. For the UPDATE command, we must specify the columns for which we want to make these statements.
+
 
