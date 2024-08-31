@@ -1,0 +1,10 @@
+insert into magazin(numeProdus) values ('Vin Roșu '''Grand Reserva'''');
+insert into magazin(numeProdus) values ('Ceas de mână':' Sport '&' Eleganță');
+insert into magazin(numeProdus) values ('Biscuiți':' Choco '&' Vanilie');
+insert into magazin(numeProdus) values ('Parfum '''Eau de Parfum'''');
+insert into magazin(numeProdus) values ('Laptop '''Pro Series'''':' Ultra Performant');
+insert into magazin(numeProdus) values ('Set de tacâmuri':' Inox '&' Aurit');
+insert into magazin(numeProdus) values ('Geantă de piele '''Luxury'''');
+insert into magazin(numeProdus) values ('Carte':' '''Ghidul Călătorului'''');
+insert into magazin(numeProdus) values ('Ulei de măsline':' Extra '&' Virgin');
+insert into magazin(numeProdus) values ('Șampon '&' Balsam '''Hidratant'''');

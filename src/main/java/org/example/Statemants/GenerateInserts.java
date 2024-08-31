@@ -67,7 +67,7 @@ public class GenerateInserts implements Generate{
             if(errors.contains(textSplit.get(i))){
                  text += "'" + textSplit.get(i) + "'";
             }
-            text += textSplit.get(i);
+            else text += textSplit.get(i);
         }
         text+="'";
         return text;

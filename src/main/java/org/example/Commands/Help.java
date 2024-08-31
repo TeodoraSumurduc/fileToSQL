@@ -22,8 +22,8 @@ public class Help extends Command {
             |--- help : Prints all the available commands for the user of the current session;
             |--- quit : Stop the app running;
             |--- logout : Logout from your account;
-            |--- load "filePath" "tableName" "statementType" : Load a CSV/JSON file and generate SQL statements;
-            |--- audit "username" "page" "pageSize" : Display command history for a user (admins only);
+            |--- load "fileName" "tableName" "statementType" : Load a CSV/JSON file and generate SQL statements;
+            |--- audit "username"  : Display command history for a user;
             |--- execute "commandId" "username" : Execute a specific SQL command from history.
             """;
 
