@@ -7,7 +7,7 @@ package org.example.DBManager;
 public class Credits {
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/proiectpao";
     private static final String USER = "root";
-    private static final String PASSWORD = "Teo.2510";
+    private static final String PASSWORD = "";
 
     /**
      * Constructor privat pentru a preveni crearea unei instanțe a clasei.
